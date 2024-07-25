@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useCanvasStore from '../../utils/store';
 
 export const EditCTA: React.FC = () => {
-    const [ctaText, setCtaText] = useState("");
+    const updateCtaText = useCanvasStore((state) => state.updateCtaText);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setCtaText(e.target.value);
+        updateCtaText(e.target.value);
     };
 
     return (
         <div className="relative">
             <input
-                value={ctaText}
+                aria-label='call-to-action'
                 type="text"
                 className="w-full pt-6 pl-3 pb-2 border-2 border-[#c4c4c4] rounded-md placeholder-transparent focus:outline-none hover:border-blue-500 focus:border-blue-500"
                 onChange={handleChange}
