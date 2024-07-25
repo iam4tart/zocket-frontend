@@ -1,15 +1,39 @@
+import { useState } from 'react';
 import { ImageUp } from 'lucide-react';
+import { useFileStore } from '../../utils/store';
 
-export const EditImage = () => {
+export const EditImage: React.FC = () => {
+    const [fileName, setFileName] = useState<string | null>(null);
+    const setFile = useFileStore((state) => state.setFile);
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            setFileName(file.name);
+            setFile(file);
+        } else {
+            setFileName(null);
+        }
+    };
+
     return (
         <>
-            <label className="flex items-center cursor-pointer text-gray-500 border-2 border-[#c4c4c4] rounded-md py-3 px-4">
+            <label className="flex items-center cursor-pointer text-gray-500 border-2 border-[#c4c4c4] rounded-md py-3 px-4 hover:border-blue-500 focus:border-blue-500">
                 <ImageUp className="mr-3 text-blue-500" />
-                <input type="file" className="hidden" accept="image/*" />
+                <input
+                    type="file"
+                    className="hidden"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                />
                 <span>
-                    Change the <b>ad creative image</b>. <u className="text-blue-500">select file</u>
+                    {fileName ? (
+                        <span>{fileName}</span>
+                    ) : (
+                        <>Change the <b>ad creative image</b>. <u className="text-blue-500">select file</u></>
+                    )}
                 </span>
             </label>
         </>
-    )
-}
+    );
+};

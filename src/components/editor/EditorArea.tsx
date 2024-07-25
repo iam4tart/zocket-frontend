@@ -3,12 +3,21 @@ import { Divider } from './Divider';
 import { EditContent } from './EditContent';
 import { EditCTA } from './EditCTA';
 import { EditColor } from './EditColor';
+import { PanelBottomClose } from 'lucide-react';
 
-export const EditorArea = () => {
-
+export const EditorArea = ({ toggleFullCanvas }) => {
     return (
         <div className="w-full h-full flex flex-col justify-between bg-white">
             <div className="w-full h-full flex flex-col bg-white p-6">
+
+                <div className="flex justify-center items-center sm:hidden hover:text-blue-500">
+                    <button
+                        className="flex items-center rounded"
+                        onClick={toggleFullCanvas}
+                    >
+                        <PanelBottomClose />
+                    </button>
+                </div>
 
                 <div className="mt-10">
                     <p className="font-bold text-center text-xl">Ad Customization</p>
@@ -18,23 +27,23 @@ export const EditorArea = () => {
                 </div>
 
                 <div className="mt-10">
-                    <EditImage/>
+                    <EditImage />
                 </div>
 
                 <div className="">
-                    <Divider/>
+                    <Divider />
                 </div>
 
                 <div>
-                    <EditContent/>
+                    <EditContent />
                 </div>
 
                 <div className='mt-6'>
-                    <EditCTA/>
+                    <EditCTA />
                 </div>
 
                 <div className='mt-6'>
-                    <EditColor/>
+                    <EditColor />
                 </div>
 
             </div>
