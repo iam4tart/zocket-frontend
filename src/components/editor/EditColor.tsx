@@ -1,36 +1,37 @@
 import { useState } from 'react';
-import { SketchPicker } from 'react-color';
+import { SketchPicker, ColorResult } from 'react-color';
 import { Plus } from 'lucide-react';
 import queue from '../../utils/queue';
 
+class ColorQueue extends queue<string> {}
+
 export const EditColor: React.FC = () => {
     const [showPicker, setShowPicker] = useState(false);
-    const [color, setColor] = useState("");
-    const [colorState, setColorState] = useState("");
-    const [recentColor, setRecentColor] = useState(new queue())
+    const [color, setColor] = useState<string>("");
+    const [colorState, setColorState] = useState<string>("");
+    const [recentColor, setRecentColor] = useState<ColorQueue>(new ColorQueue());
 
-    const handleColorChange = (color: any) => {
+    const handleColorChange = (color: ColorResult) => {
         setColor(color.hex);
     };
 
     const handleSwatchColor = () => {
-        let swatch = new queue();
+        let swatch = new ColorQueue();
         swatch = Object.assign(recentColor);
 
-        if(color===colorState){
-            return
-          }
+        if (color === colorState) {
+            return;
+        }
 
-        if(Object.keys(recentColor.state).length>=5) {
+        if (Object.keys(recentColor.state).length >= 5) {
             swatch.pop();
             swatch.push(color);
-        }
-        else{
-            swatch.push(color)
+        } else {
+            swatch.push(color);
         }
 
         setRecentColor(swatch);
-    }
+    };
 
     const openEyeDropper = async () => {
         if ('EyeDropper' in window) {
@@ -51,18 +52,17 @@ export const EditColor: React.FC = () => {
         <>
             <p className="text-gray-500 ml-1 text-sm">Choose Color </p>
             <div className='flex mt-2 '>
+                {Object.values(recentColor.state).map((color, index) => (
+                    <div
+                        key={index}
+                        onClick={() => setColor(color)}
+                        style={{ backgroundColor: color }}
+                        className='ml-2 mt-2 w-6 h-6 rounded-full cursor-pointer flex text-center'
+                    ></div>
+                ))}
 
-                {
-                    Object.values(recentColor.state).map((color, idex)=> (
-                        <div key={idex} onClick={() => setColor(color)} style={{ backgroundColor: color }} className='ml-2 mt-2 w-6 h-6 rounded-full cursor-pointer flex text-center'></div>
-
-                    ))
-                }
-
-                
                 <div
                     className="ml-2 mt-2 w-6 h-6 rounded-full cursor-pointer flex items-center justify-center text-lg font-bold text-center bg-gray-100 hover:bg-black hover:text-gray-100"
-
                     onClick={() => setShowPicker(!showPicker)}
                 >
                     <Plus size={20} />
@@ -70,9 +70,14 @@ export const EditColor: React.FC = () => {
 
                 {showPicker && (
                     <div className="absolute z-10 mt-2">
-                        <div 
-                        onClick={() => {setShowPicker(false); setColorState(color); handleSwatchColor();}}
-                        className="fixed inset-0 z-0" />
+                        <div
+                            onClick={() => {
+                                setShowPicker(false);
+                                setColorState(color);
+                                handleSwatchColor();
+                            }}
+                            className="fixed inset-0 z-0"
+                        />
                         <div className="relative z-20">
                             <SketchPicker
                                 color={color}
@@ -89,7 +94,6 @@ export const EditColor: React.FC = () => {
                     </div>
                 )}
             </div>
-
         </>
     );
 };

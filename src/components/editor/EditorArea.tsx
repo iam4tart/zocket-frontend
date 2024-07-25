@@ -5,7 +5,7 @@ import { EditCTA } from './EditCTA';
 import { EditColor } from './EditColor';
 import { PanelBottomClose } from 'lucide-react';
 
-export const EditorArea = ({ toggleFullCanvas }) => {
+export const EditorArea = ({ toggleFullCanvas }: { toggleFullCanvas: () => void }) => {
     return (
         <div className="w-full h-full flex flex-col justify-between bg-white">
             <div className="w-full h-full flex flex-col bg-white p-6">
