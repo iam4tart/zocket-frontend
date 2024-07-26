@@ -10,7 +10,7 @@ export const EditorArea = ({ toggleFullCanvas }: { toggleFullCanvas: () => void 
         <div className="w-full h-full flex flex-col justify-between bg-white">
             <div className="w-full h-full flex flex-col bg-white p-6">
 
-                <div className="flex justify-center items-center sm:hidden hover:text-blue-500">
+                <div className="flex justify-center items-center sm:hidden hover:text-blue-600">
                     <button
                         aria-label='hide-editor'
                         className="flex items-center rounded"

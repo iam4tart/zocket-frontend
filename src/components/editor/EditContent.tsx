@@ -13,7 +13,7 @@ export const EditContent: React.FC = () => {
             <input
                 aria-label='ad-content'
                 type="text"
-                className="w-full pt-6 pl-3 pb-2 border-2 border-[#c4c4c4] rounded-md placeholder-transparent focus:outline-none hover:border-blue-500 focus:border-blue-500"
+                className="w-full pt-6 pl-3 pb-2 border-2 border-[#c4c4c4] rounded-md placeholder-transparent focus:outline-none hover:border-blue-600 focus:border-blue-600"
                 onChange={handleChange}
             />
             <label
