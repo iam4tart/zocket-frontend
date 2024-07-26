@@ -19,8 +19,8 @@ export const EditImage: React.FC = () => {
 
     return (
         <>
-            <label className="flex items-center cursor-pointer text-gray-500 border-2 border-[#c4c4c4] rounded-md py-3 px-4 hover:border-blue-600 focus:border-blue-600">
-                <ImageUp className="mr-3 text-blue-600" />
+            <label className="flex items-center cursor-pointer text-gray-500 border-2 border-[#c4c4c4] rounded-md py-3 px-4 hover:border-blue-500 focus:border-blue-500">
+                <ImageUp className="mr-3 text-blue-500" />
                 <input
                     aria-label='ad-creative'
                     type="file"
@@ -32,7 +32,7 @@ export const EditImage: React.FC = () => {
                     {fileName ? (
                         <span>{fileName}</span>
                     ) : (
-                        <>Change the <b>ad creative image</b>. <u className="text-blue-600">select file</u></>
+                        <>Change the <b>ad creative image</b>. <u className="text-blue-500">select file</u></>
                     )}
                 </span>
             </label>
