@@ -52,6 +52,7 @@ class Canvas extends Component<CanvasProps> {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+
     const image = new Image();
     const image2 = new Image();
     const image3 = new Image();
@@ -82,6 +83,7 @@ class Canvas extends Component<CanvasProps> {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+
     ctx.globalCompositeOperation = "source-atop"
     ctx.clearRect(56, 442, 970, 600);
 
@@ -105,6 +107,7 @@ class Canvas extends Component<CanvasProps> {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+    
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = '#FFFFFF';
