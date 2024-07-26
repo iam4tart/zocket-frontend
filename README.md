@@ -13,7 +13,7 @@ Key Performance Metrics:
 
 <hr/>
 
-### Tech Stack [Made with Typescript]
+### Tech Stack [ Made with Typescript ]
 - Vite (for server)
 - React (for frontend framework)
 - Tailwind (for css framework)
