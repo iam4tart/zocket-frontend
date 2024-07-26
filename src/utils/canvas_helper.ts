@@ -1,11 +1,9 @@
-export const strBreak=(inputString, maxCharactersPerLine)=> {
-    var words = inputString.split(' ');
-    var lines = [];
-    var currentLine = '';
+export const breakStringIntoArray = (inputString: string, maxCharactersPerLine: number): string[] => {
+    const words = inputString.split(' ');
+    const lines: string[] = [];
+    let currentLine = '';
 
-    for (var i = 0; i < words.length; i++) {
-        var word = words[i];
-
+    for (const word of words) {
         if (currentLine.length + word.length <= maxCharactersPerLine) {
             currentLine += word + ' ';
         } else {
@@ -15,11 +13,10 @@ export const strBreak=(inputString, maxCharactersPerLine)=> {
     }
 
     lines.push(currentLine.trim());
-
     return lines;
 }
 
-export const drawRect=(x, y, width, height, radius,bgColor,ctx)=> {
+export const drawRoundedRect = (x: number, y: number, width: number, height: number, radius: number, bgColor: string, ctx: CanvasRenderingContext2D): void => {
     ctx.beginPath();
     ctx.moveTo(x + radius, y);
     ctx.arcTo(x + width, y, x + width, y + height, radius);
