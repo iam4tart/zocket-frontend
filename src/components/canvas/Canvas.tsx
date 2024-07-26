@@ -112,14 +112,14 @@ class Canvas extends Component<CanvasProps> {
 
     ctx.fillStyle = '#FFFFFF';
     ctx.font = '44px Arial';
-    let start = 90
+    let starty = 90
     if (text === '') {
       text = this.contentText
     }
     const lines = breakString(text, 31)
     lines.map(line => {
-      ctx.fillText(line, 50, start);
-      start = start + 50
+      ctx.fillText(line, 50, starty);
+      starty = starty + 50
     })
   }
 
@@ -139,8 +139,8 @@ class Canvas extends Component<CanvasProps> {
     ctx.font = '30px Arial';
     const text_width = ctx.measureText(lines[0]).width
     const text_height = lines.length * 30
-    const width = text_width + 48
-    const height = text_height + 48
+    const width = text_width + 24 + 24
+    const height = text_height + 24 + 24
     drawRect(190, 320, width, height, 20, bgColor, ctx);
     let starty = 320 + (height / 2 + 8)
     const startx = 190 + 24
@@ -149,7 +149,6 @@ class Canvas extends Component<CanvasProps> {
       ctx.fillText(line, startx, starty);
       starty = starty + 30
     })
-
   }
 
   render() {
