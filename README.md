@@ -1,9 +1,7 @@
 # Zocket Assignment for front-end develepor role
 
 ### Working Frontend
-<iframe src="https://github.com/user-attachments/assets/3d604219-01ee-4236-819a-43e0156f4e63" width="640" height="480"></iframe>
-
-
+https://github.com/user-attachments/assets/3d604219-01ee-4236-819a-43e0156f4e63
 
 
 
