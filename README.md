@@ -1,6 +1,7 @@
 # Zocket Assignment for front-end develepor role
 
-https://github.com/user-attachments/assets/3d604219-01ee-4236-819a-43e0156f4e63
+> Working Frontend
+- https://github.com/user-attachments/assets/3d604219-01ee-4236-819a-43e0156f4e63
 
 https://github.com/user-attachments/assets/1399587a-f943-46e6-b4fe-d9ca02e7c40a
 
