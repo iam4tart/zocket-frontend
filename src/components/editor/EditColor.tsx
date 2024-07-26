@@ -12,7 +12,6 @@ export const EditColor: React.FC = () => {
   const [colorState, setColorState] = useState<string>("");
   const [recentColor, setRecentColor] = useState<ColorQueue>(new ColorQueue());
 
-  
   const updateColor = useCanvasStore((state) => state.updateColor);
 
   const handleColorChange = (color: ColorResult) => {

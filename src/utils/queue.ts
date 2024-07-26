@@ -16,7 +16,7 @@ class Queue<T> {
 
   pop(): void {
       if (Object.keys(this.state).length === 0) {
-          console.log('Nothing to pop');
+          console.log('Empty Queue');
       } else {
           delete this.state[this.front];
           this.front += 1;

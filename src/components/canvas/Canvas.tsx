@@ -1,5 +1,6 @@
 import { Component, createRef, RefObject } from 'react';
-import { breakStringIntoArray,drawRoundedRect } from '../../utils/canvas_helper';
+import { breakString } from '../../utils/breakString';
+import { drawRect } from '../../utils/drawRect';
 
 interface CanvasProps {
   info: {
@@ -44,8 +45,6 @@ class Canvas extends Component<CanvasProps> {
     if (prevProps.info.ctaText != this.props.info.ctaText) {
       this.writeCtaText(this.props.info.ctaText);
     }
-
-
   }
 
   drawCanvas() {
@@ -114,7 +113,7 @@ class Canvas extends Component<CanvasProps> {
     if (text === '') {
       text = this.contentText
     }
-    const lines = breakStringIntoArray(text, 31)
+    const lines = breakString(text, 31)
     lines.map(line => {
       ctx.fillText(line, 50, start);
       start = start + 50
@@ -132,14 +131,14 @@ class Canvas extends Component<CanvasProps> {
     if (!text) {
       text = this.ctaText
     }
-    const lines = breakStringIntoArray(text, 20)
+    const lines = breakString(text, 20)
 
     ctx.font = '30px Arial';
     const text_width = ctx.measureText(lines[0]).width
     const text_height = lines.length * 30
     const width = text_width + 48
     const height = text_height + 48
-    drawRoundedRect(190, 320, width, height, 20, bgColor, ctx);
+    drawRect(190, 320, width, height, 20, bgColor, ctx);
     let starty = 320 + (height / 2 + 8)
     const startx = 190 + 24
     ctx.fillStyle = '#ffffff';
