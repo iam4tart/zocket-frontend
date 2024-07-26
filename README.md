@@ -1,12 +1,9 @@
 # Zocket Assignment for front-end develepor role
 
-### Working Frontend
 https://github.com/user-attachments/assets/3d604219-01ee-4236-819a-43e0156f4e63
 
-### Responsive Design
 https://github.com/user-attachments/assets/1399587a-f943-46e6-b4fe-d9ca02e7c40a
 
-### Performance Test
 https://github.com/user-attachments/assets/90afe106-a35b-4414-a706-6749f514b1bb
 
 Key Performance Metrics:
