@@ -3,14 +3,11 @@
 ### Working Frontend
 https://github.com/user-attachments/assets/3d604219-01ee-4236-819a-43e0156f4e63
 
-
-
 ### Responsive Design
-<iframe src="https://drive.google.com/file/d/1mMKBnx-XPXH0MzkGGSc7XimKRPZXfDq0/preview" width="640" height="480"></iframe>
+https://github.com/user-attachments/assets/1399587a-f943-46e6-b4fe-d9ca02e7c40a
 
 ### Performance Test
-<iframe src="https://drive.google.com/file/d/1umMn2n37Q7A3F2HjJrsfZHN0NWpWB7PV/preview" width="640" height="480"></iframe>
-
+https://github.com/user-attachments/assets/90afe106-a35b-4414-a706-6749f514b1bb
 
 Key Performance Metrics:
 - Cummulative Layout Shift (CLS Score) < 1 as suggested by Google
