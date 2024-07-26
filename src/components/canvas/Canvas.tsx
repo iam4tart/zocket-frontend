@@ -11,21 +11,20 @@ interface CanvasProps {
 
 class Canvas extends Component<CanvasProps> {
   canvasRef: RefObject<HTMLCanvasElement>;
-  captionCanvasRef: RefObject<HTMLCanvasElement>;
+  contentCanvasRef: RefObject<HTMLCanvasElement>;
   ctaCanvasRef: RefObject<HTMLCanvasElement>;
-  defaultBgColor: string;
-  defaultContentText: string;
-  defaultCtaText: string;
+  color: string;
+  contentText: string;
+  ctaText: string;
 
   constructor(props: CanvasProps) {
     super(props);
     this.canvasRef = createRef();
-    this.captionCanvasRef = createRef();
+    this.contentCanvasRef = createRef();
     this.ctaCanvasRef = createRef();
-    this.defaultBgColor = '#0369A1';
-    this.defaultContentText = '1 & 2 BHK Luxury Apartments at just Rs.34.97 Lakhs';
-    this.defaultCtaText = 'Shop Now';
-    // this.adImage = 'https://images.unsplash.com/photo-1721893484306-23d5379b5d9f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+    this.color = '#0369A1';
+    this.contentText = '1 & 2 BHK Luxury Apartments at just Rs.34.97 Lakhs';
+    this.ctaText = 'Shop Now';
   }
 
   componentDidMount() {
@@ -33,9 +32,12 @@ class Canvas extends Component<CanvasProps> {
   }
 
   componentDidUpdate(prevProps: CanvasProps) {
-    // re-draw canvas if color changes
-    if (this.props.info.color !== prevProps.info.color) {
-      this.drawCanvas();
+    if (prevProps.info.file != this.props.info.file) {
+      this.drawAdImage(this.props.info.file)
+    }
+
+    if (prevProps.info.file != this.props.info.file) {
+      this.drawAdImage(this.props.info.file)
     }
   }
 
@@ -64,8 +66,32 @@ class Canvas extends Component<CanvasProps> {
     image2.src = 'https://d273i1jagfl543.cloudfront.net/templates/global_temp_landscape_temp_10_mask.png';
     image3.src = 'https://d273i1jagfl543.cloudfront.net/templates/global_temp_landscape_temp_10_Mask_stroke.png?random=12345';
 
-    canvas.style.backgroundColor = this.props.info.color || this.defaultBgColor;
+    canvas.style.backgroundColor = this.props.info.color || this.color;
   }
+
+  drawAdImage = (file: File | null) => {
+    const canvas = this.canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.globalCompositeOperation = "source-atop"
+    ctx.clearRect(56, 442, 970, 600);
+
+    const image = new Image()
+    image.onload = () => {
+      ctx.drawImage(image, 56, 442, 970, 600);
+    }
+    
+    if (file) {
+      image.src = URL.createObjectURL(file);
+    } else {
+      image.src = 'default-image-url';
+    }
+
+    ctx.globalCompositeOperation = "source-over"
+  }
+
+  
 
   render() {
     return (
@@ -79,7 +105,7 @@ class Canvas extends Component<CanvasProps> {
         ></canvas>
         <canvas
           className='w-56 sm:w-[30rem]'
-          ref={this.captionCanvasRef}
+          ref={this.contentCanvasRef}
           width={1080}
           height={1080}
           style={{ position: 'absolute' }}

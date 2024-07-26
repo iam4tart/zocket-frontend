@@ -22,6 +22,7 @@ function App() {
       {!isEditorVisible && (
         <div className='sm:hidden absolute bottom-4 left-4 hover:text-blue-500'>
         <button
+          aria-label='show-editor'
           className="rounded-md bg-white p-1"
           onClick={toggleFullCanvas}
         >

@@ -12,6 +12,7 @@ export const EditorArea = ({ toggleFullCanvas }: { toggleFullCanvas: () => void 
 
                 <div className="flex justify-center items-center sm:hidden hover:text-blue-500">
                     <button
+                        aria-label='hide-editor'
                         className="flex items-center rounded"
                         onClick={toggleFullCanvas}
                     >
