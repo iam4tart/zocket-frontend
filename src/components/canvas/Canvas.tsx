@@ -146,6 +146,7 @@ class Canvas extends Component<CanvasProps> {
       ctx.fillText(line, startx, starty);
       starty = starty + 30
     })
+
   }
 
   render() {

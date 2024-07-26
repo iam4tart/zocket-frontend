@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SketchPicker, ColorResult } from 'react-color';
 import { Plus } from 'lucide-react';
 import queue from '../../utils/queue';
-import useCanvasStore from '../../utils/store'; // Adjust the import path as needed
+import useCanvasStore from '../../utils/store';
 
 class ColorQueue extends queue<string> {}
 
@@ -46,7 +46,7 @@ export const EditColor: React.FC = () => {
         updateColor(sRGBHex);
       } catch (error) {
         console.error("Failed to use EyeDropper API:", error);
-        alert('Use Chrome, Edge or Arc to pick color from page.');
+        alert('Use Chrome, Edge or Arc to pick color from the page.');
       }
     } else {
       console.log('Failed to use EyeDropper API');

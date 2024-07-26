@@ -4,12 +4,12 @@
     border-radius: 4px;
 }
 
-/* .bg-diagonal-stripes {
+.bg-diagonal-stripes {
     background-image: repeating-linear-gradient(
       -45deg,
-      #ffffff 0,
-      #ffffff 5px,
-      #f1f1f1 5px,
-      #f1f1f1 10px
+      #f4f4f4 0,
+      #f4f4f4 5px,
+      #f6f6f6 5px,
+      #f6f6f6 10px
     );
-  } */
+  }
