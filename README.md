@@ -1,13 +1,14 @@
 # Zocket Assignment for front-end develepor role
 
 ### Working Frontend
-![Working Frontend](https://drive.google.com/file/d/1tF6cYjKC3MCkcxifKOujYI8NvOLOwfej/view?usp=sharing)
+<iframe src="https://drive.google.com/file/d/1tF6cYjKC3MCkcxifKOujYI8NvOLOwfej/preview" width="640" height="480"></iframe>
 
 ### Responsive Design
-![Responsive Design](https://drive.google.com/file/d/1mMKBnx-XPXH0MzkGGSc7XimKRPZXfDq0/view?usp=sharing)
+<iframe src="https://drive.google.com/file/d/1mMKBnx-XPXH0MzkGGSc7XimKRPZXfDq0/preview" width="640" height="480"></iframe>
 
 ### Performance Test
-![Performance Test](https://drive.google.com/file/d/1umMn2n37Q7A3F2HjJrsfZHN0NWpWB7PV/view?usp=sharing)
+<iframe src="https://drive.google.com/file/d/1umMn2n37Q7A3F2HjJrsfZHN0NWpWB7PV/preview" width="640" height="480"></iframe>
+
 
 Key Performance Metrics:
 - Cummulative Layout Shift (CLS Score) < 1 as suggested by Google
